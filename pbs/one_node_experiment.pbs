@@ -1,0 +1,94 @@
+#!/bin/bash
+
+
+
+
+#PBS -N DICELAB_one_node_iot_run
+#PBS -l select=1:ncpus=16:chip_type=e5-2665:interconnect=fdr:mem=60gb,walltime=00:30:00,place=pack
+#PBS -j oe 
+  
+#PBS -q workq
+
+######################################################
+#$TMPDIR is used to access local_scratch -> /local_scratch/pbs.$PBS_JOBID/
+#if [ ! -z "$PARAMETER_LOC" ]; then PARAMETER_LOC=/zfs/dicelab/DigitalPlant/bash_scripts/parameters.list; fi
+#REPO=$(cd "$(dirname "$(realpath "${BASH_SOURCE[0]}")")" && git rev-parse --show-toplevel)
+
+
+#Declare constants
+
+REPO=/zfs/dicelab/DigitalPlant
+echo $REPO is repo
+
+#the results parent directory
+RESULTS=$REPO/results
+if [[ ! -d $TMPDIR ]]; then
+	echo "Setting TMPDIR to ."
+	TMPDIR=./	
+fi
+#TMPDIR=./ #to use system tmpdir, keep commented
+
+GENERATE_DATA_LOC=$REPO/C_Synthetic_Data_Generator/cmake/generate_data
+PARAMETER_LOC=$REPO/bash_scripts/parameters.list
+DRIVER_SCRIPT_LOC=$REPO/bash_scripts/run_multiple_sensors.sh
+
+CONN_LOC=$REPO/connection_strings/connection_strings_10000.list
+
+
+echo $PARAMETER_LOC $GENERATE_DATA_LOC $CONN_LOC $DRIVER_SCRIPT_LOC
+
+#Create folder in /local_scratch, timestamped and with the node name
+FOLDER=$(echo $(date +"%B_%d_%H_%M_%S")_$HOSTNAME  | cut -d . -f 1)
+
+#Create final results folder
+mkdir $RESULTS/$FOLDER/
+if [[ ! -d $RESULTS/$FOLDER ]]; then
+	echo "Failed to create final results folder at $RESULTS/$FOLDER"
+	exit 1
+fi
+
+#Create temp logging folder
+mkdir $TMPDIR/$FOLDER
+if [[ ! -d $TMPDIR/$FOLDER ]]; then
+	echo "Failed to create log folder"
+	exit 1
+fi
+#CHANGE DIR to logging folder
+cd $TMPDIR/$FOLDER
+mkdir logs
+
+echo $PARAMETER_LOC $GENERATE_DATA_LOC $CONN_LIST_LOC $DRIVER_SCRIPT_LOC  >> log.out
+
+#Copy files to /local_scratch
+cp $PARAMETER_LOC ./parameters
+cp $GENERATE_DATA_LOC ./generate_data
+cp $DRIVER_SCRIPT_LOC ./driver.sh
+cp $CONN_LOC ./conn.list
+
+
+#Confirm everything got coppied
+#TODO
+#Possible assert statement?
+
+
+
+#See what's running. Ignoring root
+ps aux | grep -v root >> log.out
+
+#Set up enviornment | gcc and spack
+module load gcc/8.2.0
+source /zfs/dicelab/whalabi/spack/share/spack/setup-env.sh
+spack load azureiot@LTS_05_2020_Ref01
+
+ls -al >> log.out
+
+#Run script. Also time it.
+time /bin/bash ./driver.sh ./parameters ./conn.list ./logs ./generate_data >> log.out 2>> log.err
+
+
+#Move files to results, and then clean up
+rm *.list ./generate_data ./driver.sh 
+mv * $RESULTS/$FOLDER
+#Catch anything left
+rm -rf $TMPDIR/$FOLDER
+

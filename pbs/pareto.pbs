@@ -1,0 +1,124 @@
+#!/bin/bash
+
+
+#PBS -N DICELAB_pareto_iot_run
+
+# -l select=1:ncpus=16:interconnect=fdr:mem=16gb,walltime=1:00:00,place=pack
+#PBS -l select=1:ncpus=16:interconnect=fdr:mem=60gb:phase=8b,walltime=10:00:00,place=pack
+#PBS -j oe 
+#PBS -q workq
+#PBS -m abe
+#PBS -M whalabi@clemson.edu
+
+######################################################
+#$TMPDIR is used to access local_scratch -> /local_scratch/pbs.$PBS_JOBID/
+#if [ ! -z "$PARAMETER_LOC" ]; then PARAMETER_LOC=/zfs/dicelab/DigitalPlant/bash_scripts/parameters.list; fi
+#REPO=$(cd "$(dirname "$(realpath "${BASH_SOURCE[0]}")")" && git rev-parse --show-toplevel)
+
+
+#Declare constants
+
+REPO=/zfs/dicelab/DigitalPlant
+echo $REPO is repo
+#the results parent directory
+RESULTS=$REPO/results
+#TMPDIR=./ #to use system tmpdir, keep commented
+#FIXME ^^^
+
+GENERATE_DATA_LOC=$REPO/C_Synthetic_Data_Generator/cmake/generate_data
+#PARAMETER_LOC=generated below
+DRIVER_SCRIPT_LOC=$REPO/bash_scripts/run_multiple_sensors.sh
+
+CONN_LOC=$REPO/connection_strings/connection_strings_tier3.list
+#CONN_LIST=(connection_strings_4.list connection_strings_8.list connection_strings_16.list connection_strings_32.list)
+#CONN_LIST=(connection_strings_4.list connection_strings_8.list connection_strings_16.list connection_strings_32.list )
+
+MSGS_TO_SEND=(300 3000 30000 300 3000 30000 300 3000 30000)
+ALPHA=(1 2 3)
+IMT=(500 50 5 707 71 7 794 79 8 )
+IMTS_PER_ALPHA=3
+echo $PARAMETER_LOC $GENERATE_DATA_LOC $CONN_LIST_LOC $DRIVER_SCRIPT_LOC
+
+
+#Create folder in /local_scratch, timestamped and with the node name
+FOLDER=$(echo $(date +"%B_%d_%H_%M_%S")_$HOSTNAME  | cut -d . -f 1)_Pareto
+
+#Create final results folder
+mkdir $RESULTS/$FOLDER/
+if [[ ! -d $RESULTS/$FOLDER ]]; then
+	echo "Failed to create final results folder at $RESULTS/$FOLDER"
+	exit 1
+fi
+
+#Create temp logging folder
+mkdir $TMPDIR/$FOLDER
+if [[ ! -d $TMPDIR/$FOLDER ]]; then
+	echo "Failed to create log folder"
+	exit 1
+fi
+#CHANGE DIR to logging folder
+cd $TMPDIR/$FOLDER
+
+
+#create parameters files
+for (( a=0; a<${#ALPHA[@]}; a++ )); do
+	for  (( j=0; j<${#ALPHA[@]}; j++ )); do 
+		intermessage=${IMT[$(($a*$IMTS_PER_ALPHA+$j))]}
+		msgs_to_send=${MSGS_TO_SEND[$(($a*$IMTS_PER_ALPHA+$j))]}
+		shape=${ALPHA[$a]}	
+		printf "1\n\
+--distribution pareto --shape "$shape" --intermessage "$intermessage" --msgcount "$msgs_to_send"  --type Size2048\n"\
+		>> ./parameter"$shape"_"$intermessage"
+	done
+done
+
+echo $PARAMETER_LOC $GENERATE_DATA_LOC $CONN_LIST_LOC $DRIVER_SCRIPT_LOC  >> log.out
+
+#Copy files to /local_scratch
+#cp $PARAMETER_LOC ./parameters.list
+cp $GENERATE_DATA_LOC ./generate_data
+cp $DRIVER_SCRIPT_LOC ./driver.sh
+cp $CONN_LOC ./conn.list
+
+#TODO
+#Possible assert statement?
+
+#Create parameters-n
+
+#See what's running. Ignoring root
+ps aux | grep -v root >> log.out
+
+#Set up enviornment | gcc and spack
+module load gcc/8.2.0
+source /zfs/dicelab/whalabi/spack/share/spack/setup-env.sh
+spack load azureiot@LTS_05_2020_Ref01 arch=x86_64
+
+ls -al >> log.out
+#Run script.  t.
+
+
+
+for para in parameter*; do #9 parameters	
+	mkdir run_"$para"
+	curr_folder=run_"$para"
+	for run in {0..0}; do
+		mkdir run_"$para"/trial"$run"
+		curr_folder=run_"$para"/trial"$run"
+		printf "\nUsing $para, running trial "$run"\n\n" >> log.out
+		./driver.sh ./$para ./conn.list $curr_folder ./generate_data >> log.out
+#		sleep 30
+	done
+	rsync -a log.out run_"$para" $RESULTS/$FOLDER
+	sleep 60
+done
+
+
+
+
+#Move files to results, and then clean up
+rm *.list ./generate_data ./driver.sh 
+rsync -av * $RESULTS/$FOLDER 
+#Catch anything left
+rm -rf $TMPDIR/$FOLDER
+
+exit 0

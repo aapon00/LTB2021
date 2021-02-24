@@ -1,0 +1,3 @@
+/zfs/dicelab/DigitalPlant/C_Synthetic_Data_Generator/cmake/CMakeFiles/rebuild_cache.dir
+/zfs/dicelab/DigitalPlant/C_Synthetic_Data_Generator/cmake/CMakeFiles/generate_data.dir
+/zfs/dicelab/DigitalPlant/C_Synthetic_Data_Generator/cmake/CMakeFiles/edit_cache.dir

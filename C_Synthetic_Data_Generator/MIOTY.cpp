@@ -1,0 +1,52 @@
+#include "MIOTY.h"
+
+void MIOTY::GenerateTemplateFieldTypes() {
+    myTemplate["time"] = new DataPoint("datetime");
+    myTemplate["accelerometer.YAxis"] = new IntegerDataPoint("int", -100, 100);
+    myTemplate["accelerometer.ZAxis"] = new IntegerDataPoint("int", -100, 100);
+    vector<string> values = {"Acceleration in XYZ"};
+    myTemplate["accelerometer.comment"] = new ValuesDataPoint("values", values);
+    myTemplate["analog1"] = new IntegerDataPoint("int", 0, 100);
+    myTemplate["battery"] = new IntegerDataPoint("int", 0, 100);
+    values.clear();
+    values.push_back("no_comment");
+    myTemplate["comment"] = new ValuesDataPoint("values", values);
+    myTemplate["date_hour"] = new IntegerDataPoint("int", 0, 23);
+    myTemplate["date_mday"] = new IntegerDataPoint("int", 0, 31);
+    myTemplate["date_minute"] = new IntegerDataPoint("int", 0, 60);
+    values.clear();
+    values = {"january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"};
+    myTemplate["date_month"] = new ValuesDataPoint("values", values);
+    myTemplate["date_second"] = new IntegerDataPoint("int", 0, 60);
+    values.clear();
+    values = {"monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"};
+    myTemplate["date_wday"] = new ValuesDataPoint("values", values);
+    myTemplate["date_year"] = new IntegerDataPoint("int", 2018, 2020);
+    values.clear();
+    values.push_back("local");
+    myTemplate["date_zone"] = new ValuesDataPoint("values", values);
+    myTemplate["deviceId"] = new CharDataPoint("char", CharacterType::alphanumeric, 16);
+    myTemplate["humidity"] = new IntegerDataPoint("int", 0, 100);
+    values.clear();
+    values.push_back("mioty_44");
+    myTemplate["index"] = new ValuesDataPoint("values", values);
+    myTemplate["linecount"] = new IntegerDataPoint("int", 0, 100);
+    myTemplate["noiseLevel"] = new FloatDataPoint("float", -200.0, 200.0);
+    myTemplate["packetcnt"] = new IntegerDataPoint("int", 0, 100);
+    myTemplate["pressure"] = new IntegerDataPoint("int", 0, 1000);
+    myTemplate["sensortype"] = new CharDataPoint("char", CharacterType::alphanumeric, 16);
+    myTemplate["signalLevel"] = new FloatDataPoint("float", -200.0, 200.0);
+    values.clear();
+    values.push_back("no_comment");
+    myTemplate["statusbyte.comment"] = new ValuesDataPoint("values", values);
+    myTemplate["statusbyte.discrete1"] = new IntegerDataPoint("int", 0, 1);
+    myTemplate["statusbyte.discrete2"] = new IntegerDataPoint("int", 0, 1);
+    myTemplate["statusbyte.error"] = new IntegerDataPoint("int", 0, 1);
+    values.clear();
+    values = {"z", "x", "y"};
+    myTemplate["statusbyte.orientation"] = new ValuesDataPoint("values", values);
+    myTemplate["statusbyte.shock"] = new IntegerDataPoint("int", 0, 1);
+    myTemplate["temperature"] = new FloatDataPoint("float", -200.0, 200.0);
+    myTemplate["timeendpos"] = new IntegerDataPoint("int", 0, 100);
+    myTemplate["timestartpos"] = new IntegerDataPoint("int", 0, 100);
+}

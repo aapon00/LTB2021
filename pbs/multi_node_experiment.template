@@ -1,0 +1,114 @@
+#!/bin/bash
+#PBS -N DICELAB_multi_node_iot_run%NUM_BOXES%
+#PBS -l select=%NUM_BOXES%:ncpus=40:mem=748gb,walltime=3:00:00
+#PBS -j oe 
+#PBS -q dicelab
+#PBS -m a
+#PBS -M whalabi@clemson.edu,jhill326@gatech.edu
+
+
+set -x
+
+# This is to ensure all local_scratch locations are created
+pbsdsh sleep 10
+
+cd $PBS_O_WORKDIR
+module add gnu-parallel
+cat $PBS_NODEFILE > nodes.txt
+
+REPO=/zfs/dicelab/DigitalPlant
+
+DATE=multi_node%NUM_BOXES%
+RESULTS=%RESULTS%/$DATE
+mkdir $RESULTS
+
+if [[ ! -d $RESULTS ]]; then
+	echo "$RESULTS cannot be created"
+	exit 1
+fi
+
+# Flatten parameter input file
+PARAMETER_LOC=$REPO/pbs/multi_node_series/parameter%NUM_BOXES%.list
+CONN_LOC=$REPO/connection_strings/connection_strings_10000.list
+
+mapfile -t parameters_array <$PARAMETER_LOC
+if [ $? -eq 0 ]; then
+    echo $PARAMETER_LOC loaded
+else
+    echo $PARAMETER_LOC has failed to load
+	exit 3
+fi
+
+mapfile -t connection_strings <$CONN_LOC
+
+# first half of parameters.list: how many devices per set of parameters
+# second half of parameters.list: the sets of parameters
+half_size=$(( ${#parameters_array[@]} / 2 ))
+
+# determine how many connection strings (and therefore devices) are stored on this machine
+num_available_devices=${#connection_strings[@]}
+
+# determine how many devices the experiment wants to use
+# --- sum the number of devices specified in the first half of parameters.list
+rm -f long_params.list
+touch long_params.list
+i=0
+count=0
+while [ $i -lt $half_size ]
+do
+  num_devices=$(( $num_devices + ${parameters_array[i]} ))
+  param_index=$(( $i + $half_size ))
+  j=0
+  while [ $j -lt ${parameters_array[i]} ]
+  do
+    k=$(( ${num_available_devices} - 1 ))
+    echo ${connection_strings[k]} $count ${parameters_array[$param_index]}  >> long_params.list
+    count=$(( $count + 1))
+    j=$(( $j + 1 ))
+    if [ $k -eq 0 ]
+    then
+      break
+    else
+      num_available_devices=$k
+    fi
+  done
+  i=$(( $i + 1 ))
+done
+
+# print an error if we do not have enough devices for the experiment
+if [ $num_available_devices -lt $num_devices ]
+then
+  echo "ERROR: more devices requested than avaialable (asked for ${num_devices}, but only have ${num_available_devices} available)" >&2
+fi
+
+cat nodes.txt
+
+cat long_params.list
+#(( ans = $num_node / 3 ))
+# parallel distribution of data to each individual node
+num_node=`wc -l nodes.txt | awk '{print $1}'`
+
+#Split the long_params.list across n files, where n=num_of_nodes. 
+#Pass the name of those files to a script that creates devices_per_node devices
+rm -f list_batch
+touch list_batch
+(( devices_per_node = $num_devices / $num_node ))
+
+rm -f $REPO/tmp/*
+
+split -l $devices_per_node long_params.list $REPO/tmp/batch
+#create a list of the generated batch files
+#ls batch* >> list_batch
+#cat batch*
+
+(ls $REPO/tmp/batch* | parallel --sshloginfile nodes.txt -j1 "bash /zfs/dicelab/DigitalPlant/bash_scripts/per_node_setup.sh $TMPDIR $RESULTS {}" ) && (cat nodes.txt | parallel --sshloginfile nodes.txt -j1 "bash /zfs/dicelab/DigitalPlant/bash_scripts/run_batch_sensors.sh $TMPDIR $RESULTS" ) && (cat nodes.txt | parallel --sshloginfile nodes.txt -j1 "bash /zfs/dicelab/DigitalPlant/bash_scripts/per_node_cleanup.sh $TMPDIR $RESULTS {}" )
+
+#cat nodes.txt | parallel --sshloginfile nodes.txt -j1 "echo On node {}; more $TMPDIR/local_repo/log.out"
+
+#See what's running. Ignoring root
+ps aux | grep -v root >> log.out
+
+rm $REPO/tmp/* -f
+rm nodes.txt 
+
+sleep 120 #sleep for 2 minutes to give the network rest

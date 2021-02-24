@@ -1,0 +1,50 @@
+INPUT: ./generate_data
+OUTPUT: (Error)
+        USAGE: ./executable CONNECTION_STRING [--rate N] [--time T] [--type X]
+
+INPUT: ./generate_data potato
+OUTPUT: (Success)
+        MIOTY GenerateTemplateFieldTypes
+        Success to generate data...rate 100...time 60...conn potato
+
+INPUT: ./generate_data broccoli --rate 50
+OUTPUT: (Success)
+        MIOTY GenerateTemplateFieldTypes
+        Success to generate data...rate 50...time 60...conn broccoli
+
+INPUT: ./generate_data peanuts --time 2345
+OUTPUT: (Success)
+        MIOTY GenerateTemplateFieldTypes
+        Success to generate data...rate 100...time 2345...conn peanuts
+
+INPUT: ./generate_data coconut --type Advantech_Accelerometer
+OUTPUT: (Success)
+        Advantech_Accelerometer GenerateTemplateFieldTypes
+        Success to generate data...rate 100...time 60...conn coconut
+
+INPUT: ./generate_data tiramasu --type Raspberry_Pi_Accelerometer
+OUTPUT: (Success)
+        Raspberry_Pi_Accelerometer GenerateTemplateFieldTypes
+        Success to generate data...rate 100...time 60...conn tiramasu
+
+INPUT: ./generate_data cabbage --type yeet
+OUTPUT: (Error)
+        Sensor type yeet not recognized. Please check that you have specified a valid sensor type and retry
+
+INPUT: ./generate_data oreo --turn 2
+OUTPUT: (Success)
+        MIOTY GenerateTemplateFieldTypes
+        Success to generate data...rate 100...time 60...conn oreo
+
+INPUT: ./generate_data carrot --rate 20 --time 70 --type Advantech_Accelerometer
+OUTPUT: (Success)
+        Advantech_Accelerometer GenerateTemplateFieldTypes
+        Success to generate data...rate 20...time 70...conn carrot
+
+INPUT: ./generate_data --rate -80
+OUTPUT: (Error)
+        RATE is a negative number or zero. Please check your input value and try again with a postive value.
+
+INPUT: ./generate_data --time -30
+OUTPUT: (Error)
+        TIME is a negative number or zero. Please check your input value and try again with a postive value.

@@ -1,0 +1,100 @@
+1. Check arguments --> modify Sythentic Data Generator to print contents of argsMap while testing
+
+INPUT: ./generate_data
+OUTPUT: (Error)
+        USAGE error report
+
+INPUT: ./generate_data potato
+OUTPUT: (Error)
+        USAGE error report
+
+INPUT: ./generate_data potato --distribution constant
+OUTPUT: (Error)
+        USAGE error report
+
+INPUT: ./generate_data potato --distribution constant --intermessage 700
+OUTPUT: (Error)
+        USAGE error report
+
+INPUT: ./generate_data potato --distribution constant --time 50
+OUTPUT: (Error)
+        USAGE error report
+
+INPUT: ./generate_data potato --time 30 --intermessage 700
+OUTPUT: (Error)
+        USAGE error report
+
+INPUT: ./generate_data potato --distribution constant --intermessage 700 --time 100
+OUTPUT: (Success)
+        argsMap output
+
+INPUT: ./generate_data potato --time 100 --distribution constant --intermessage 700 
+OUTPUT: (Success)
+        argsMap output
+
+INPUT: ./generate_data potato --distribution pareto --intermessage 700 --time 100
+OUTPUT: (Error)
+        USAGE error report
+
+INPUT: ./generate_data potato --distribution pareto --intermessage 700 --time 100 --shape 4
+OUTPUT: (Success)
+        argsMap output
+
+INPUT: ./generate_data potato --distribution pareto --intermessage 700 --time 100 --shape 4 --type yourBOI --batch 10 --seed 123 --filename hmm.txt --protocol yum
+OUTPUT: (Success)
+        argsMap output
+
+INPUT: ./generate_data potato --distribution constant --intermessage 700 --time 100 --yeet um
+OUTPUT: (Success)
+        argsMap output
+
+INPUT: ./generate_data potato --distribution pareto --intermessage 700 --time 100 --shape 4 --type yourBOI --batch 10 --seed 123 --filename hmm.txt --protocol yum --yeet um
+OUTPUT: (Error)
+        USAGE error report
+
+./generate_data potato --distribution constant --intermessage 0 --time 30
+Error
+
+./generate_data potato --distribution constant --intermessage 1000 --time 0
+Error
+
+./generate_data potato --distribution pareto --intermessage 1000 --time 100 --shape 0
+Error   
+
+2. Check that intermessage times are correct --> scp to my computer and play with in excel
+
+./generate_data potato --distribution constant --intermessage 500 --time 30 --filename myFile
+    60 msgs
+    check msg size
+
+./generate_data potato --distribution constant --intermessage 100 --time 30 --filename myFile2
+    300 msgs
+
+./generate_data potato --distribution pareto --shape 1 --intermessage 500 --time 30 --filename myFile3
+    60 msgs
+    check pareto dist
+
+./generate_data potato --distribution pareto --shape 10 --intermessage 500 --time 30 --filename myFile4
+    60 msgs
+    check pareto dist
+
+./generate_data potato --distribution constant --intermessage 500 --time 30 --filename myFile5 --type Advantech_Accelerometer
+    60 msgs
+    check msg size
+
+./generate_data potato --distribution constant --intermessage 500 --time 30 --filename myFile6 --type Raspberry_Pi_Accelerometer
+    60 msgs
+    check msg size
+
+./generate_data potato --distribution constant --intermessage 500 --time 30 --type yeet
+    Error
+
+./generate_data potato --distribution constant --intermessage 500 --time 30 --filename myFile7 --batch 10
+    60 msgs
+
+./generate_data potato --distribution constant --intermessage 500 --time 30 --filename myFile8 --protocol http
+60 msgs
+
+3. Check that times are near correct
+4. Try HTTPS
+5. Try batch

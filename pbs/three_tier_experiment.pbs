@@ -1,0 +1,133 @@
+#!/bin/bash
+
+
+#PBS -N DICELAB_three_tier_iot_run
+#PBS -l select=1:ncpus=16:interconnect=fdr:phase=8b:mem=60gb,walltime=15:00:00,place=pack
+#PBS -j oe 
+#PBS -q workq
+#PBS -m abe
+#PBS -M whalabi@clemson.edu,dnsmith@clemson.edu,jhill326@gatech.edu
+
+######################################################
+#$TMPDIR is used to access local_scratch -> /local_scratch/pbs.$PBS_JOBID/
+#if [ ! -z "$PARAMETER_LOC" ]; then PARAMETER_LOC=/zfs/dicelab/DigitalPlant/bash_scripts/parameters.list; fi
+#REPO=$(cd "$(dirname "$(realpath "${BASH_SOURCE[0]}")")" && git rev-parse --show-toplevel)
+
+
+#Declare constants
+
+REPO=/zfs/dicelab/DigitalPlant
+echo $REPO is repo
+#the results parent directory
+RESULTS=$REPO/results
+#TMPDIR=./ #to use system tmpdir, keep commented
+#FIXME ^^^
+
+GENERATE_DATA_LOC=$REPO/C_Synthetic_Data_Generator/cmake/generate_data
+#PARAMETER_LOC=generated below
+DRIVER_SCRIPT_LOC=$REPO/bash_scripts/run_multiple_sensors.sh
+
+CONN_LOC=$REPO/connection_strings/
+CONN_LIST=(connection_strings_tier1.list connection_strings_tier2.list connection_strings_tier3.list)
+
+MSG_SIZE=(512 2048 8192 32768) #bytes
+
+echo $PARAMETER_LOC $GENERATE_DATA_LOC $CONN_LIST_LOC $DRIVER_SCRIPT_LOC
+
+#Create folder in /local_scratch, timestamped and with the node name
+FOLDER=$(echo $(date +"%B_%d_%H_%M_%S")_$HOSTNAME  | cut -d . -f 1)
+
+#Create final results folder
+mkdir $RESULTS/$FOLDER/
+if [[ ! -d $RESULTS/$FOLDER ]]; then
+	echo "Failed to create final results folder at $RESULTS/$FOLDER"
+	exit 1
+fi
+
+#Create temp logging folder
+mkdir $TMPDIR/$FOLDER
+if [[ ! -d $TMPDIR/$FOLDER ]]; then
+	echo "Failed to create log folder"
+	exit 1
+fi
+#CHANGE DIR to logging folder
+cd $TMPDIR/$FOLDER
+
+
+#create parameters files
+for para in "${!MSG_SIZE[@]}"; do
+	printf "5\n\
+--distribution constant --intermessage 200 --time 120 --type Size"${MSG_SIZE[$para]}"\n"\
+	>> ./parameter$para
+done
+
+echo $PARAMETER_LOC $GENERATE_DATA_LOC $CONN_LIST_LOC $DRIVER_SCRIPT_LOC  >> log.out
+
+#Copy files to /local_scratch
+#cp $PARAMETER_LOC ./parameters.list
+cp $GENERATE_DATA_LOC ./generate_data
+cp $DRIVER_SCRIPT_LOC ./driver.sh
+for conn in ${CONN_LIST[@]}; do
+	cp $CONN_LOC/$conn ./$conn
+done
+#Confirm everything got coppied
+#TODO
+#Possible assert statement?
+
+#Create parameters-n
+
+#See what's running. Ignoring root
+ps aux | grep -v root >> log.out
+
+#Set up enviornment | gcc and spack
+module load gcc/8.2.0
+source /zfs/dicelab/whalabi/spack/share/spack/setup-env.sh
+spack load azureiot@LTS_05_2020_Ref01 arch=x86_64
+
+ls -al >> log.out
+#Run script.  t.
+
+for para in parameter*; do
+	mkdir run_"$para"
+	printf "\nUsing $para\n\n" >> log.out
+	for conn in ${CONN_LIST[@]}; do #n Tier lists
+		mkdir run_"$para"/"$conn"
+			for run in {0..15}; do #Run
+				curr_folder=run_"$para"/"$conn"/trial"$run"/
+				mkdir $curr_folder
+				echo Using $conn and $para, running trial $run >> log.out
+				./driver.sh ./$para ./$conn $curr_folder ./generate_data >> log.out 
+				sleep 15 #sleep in between runs
+			done #finish repeated trials
+	done #finish conn list
+	rsync -a log.out run_"$para" $RESULTS/$FOLDER
+	sleep 30 #sleep for 5 minutes OR 3 seconds
+done #finish tiers
+
+
+#
+#for conn in ${CONN_LIST[@]}; do #n Tier lists
+#	mkdir "$conn"_run
+#	printf "\nUsing $conn\n\n" >> log.out
+#	for para in parameter*; do
+#		mkdir "$conn"_run/"$para"
+#		for run in {0..30}; do #Run
+#			curr_folder="$conn"_run/"$para"/trial"$run"/
+#			mkdir $curr_folder
+#			echo Using $conn and $para, running trial $run >> log.out
+#			./driver.sh ./$para ./$conn $curr_folder ./generate_data >> log.out 
+#			#sleep ? #sleep in between runs
+#		done #finish repeated trials
+#	done #finish parameters
+#	sleep 30 #sleep for 5 minutes OR 3 seconds
+#done #finish tiers
+#
+
+
+#Move files to results, and then clean up
+rm *.list ./generate_data ./driver.sh 
+mv * $RESULTS/$FOLDER
+#Catch anything left
+rm -rf $TMPDIR/$FOLDER
+
+exit 0

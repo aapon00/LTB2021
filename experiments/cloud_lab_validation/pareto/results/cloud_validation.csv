@@ -1,0 +1,2 @@
+file,mean,median,pareto mean,pareto median,kstest d,kstest p-value
+/zfs/dicelab/DigitalPlant/tcpdump.raw.pareto.2.47250.csv,0.13562724406779664,0.1008880000008503,0.1414,0.09998489885977782,0.019653130339763403,0.8839194277649833

@@ -1,0 +1,58 @@
+11:00:45.043598 IP clnode190.clemson.cloudlab.us.50712 > 104.46.115.237.8883: Flags [S], seq 1469362005, win 64240, options [mss 1460,sackOK,TS val 556402761 ecr 0,nop,wscale 7], length 0
+11:00:45.064066 IP 104.46.115.237.8883 > clnode190.clemson.cloudlab.us.50712: Flags [S.], seq 3262606075, ack 1469362006, win 65535, options [mss 1440,nop,wscale 8,nop,nop,sackOK], length 0
+11:00:45.064109 IP clnode190.clemson.cloudlab.us.50712 > 104.46.115.237.8883: Flags [.], ack 1, win 502, length 0
+11:00:45.064618 IP clnode190.clemson.cloudlab.us.50712 > 104.46.115.237.8883: Flags [P.], seq 1:294, ack 1, win 502, length 293
+11:00:45.086165 IP 104.46.115.237.8883 > clnode190.clemson.cloudlab.us.50712: Flags [.], seq 1:1461, ack 294, win 2051, length 1460
+11:00:45.086185 IP clnode190.clemson.cloudlab.us.50712 > 104.46.115.237.8883: Flags [.], ack 1461, win 501, length 0
+11:00:45.086206 IP 104.46.115.237.8883 > clnode190.clemson.cloudlab.us.50712: Flags [P.], seq 1461:3849, ack 294, win 2051, length 2388
+11:00:45.086219 IP clnode190.clemson.cloudlab.us.50712 > 104.46.115.237.8883: Flags [.], ack 3849, win 487, length 0
+11:00:45.087438 IP clnode190.clemson.cloudlab.us.50712 > 104.46.115.237.8883: Flags [P.], seq 294:472, ack 3849, win 501, length 178
+11:00:45.108591 IP 104.46.115.237.8883 > clnode190.clemson.cloudlab.us.50712: Flags [P.], seq 3849:3940, ack 472, win 2051, length 91
+11:00:45.109465 IP clnode190.clemson.cloudlab.us.50712 > 104.46.115.237.8883: Flags [P.], seq 472:829, ack 3940, win 501, length 357
+11:00:45.172779 IP 104.46.115.237.8883 > clnode190.clemson.cloudlab.us.50712: Flags [.], ack 829, win 2049, length 0
+11:00:45.287686 IP 104.46.115.237.8883 > clnode190.clemson.cloudlab.us.50712: Flags [P.], seq 3940:4009, ack 829, win 2049, length 69
+11:00:45.290013 IP clnode190.clemson.cloudlab.us.50712 > 104.46.115.237.8883: Flags [P.], seq 829:1458, ack 4009, win 501, length 629
+11:00:45.290160 IP clnode190.clemson.cloudlab.us.50712 > 104.46.115.237.8883: Flags [.], seq 1458:2898, ack 4009, win 501, length 1440
+11:00:45.310339 IP 104.46.115.237.8883 > clnode190.clemson.cloudlab.us.50712: Flags [.], ack 2898, win 2053, length 0
+11:00:45.310344 IP clnode190.clemson.cloudlab.us.50712 > 104.46.115.237.8883: Flags [P.], seq 2898:3974, ack 4009, win 501, length 1076
+11:00:45.372754 IP 104.46.115.237.8883 > clnode190.clemson.cloudlab.us.50712: Flags [.], ack 3974, win 2048, length 0
+11:00:45.378047 IP clnode190.clemson.cloudlab.us.50712 > 104.46.115.237.8883: Flags [P.], seq 3974:4603, ack 4009, win 501, length 629
+11:00:45.437818 IP 104.46.115.237.8883 > clnode190.clemson.cloudlab.us.50712: Flags [.], ack 4603, win 2053, length 0
+11:00:45.440851 IP clnode190.clemson.cloudlab.us.50712 > 104.46.115.237.8883: Flags [P.], seq 4603:5232, ack 4009, win 501, length 629
+11:00:45.502876 IP 104.46.115.237.8883 > clnode190.clemson.cloudlab.us.50712: Flags [.], ack 5232, win 2050, length 0
+11:00:45.502890 IP clnode190.clemson.cloudlab.us.50712 > 104.46.115.237.8883: Flags [P.], seq 5232:5861, ack 4009, win 501, length 629
+11:00:45.562769 IP 104.46.115.237.8883 > clnode190.clemson.cloudlab.us.50712: Flags [.], ack 5861, win 2048, length 0
+11:00:45.562773 IP clnode190.clemson.cloudlab.us.50712 > 104.46.115.237.8883: Flags [P.], seq 5861:6490, ack 4009, win 501, length 629
+11:00:45.627796 IP 104.46.115.237.8883 > clnode190.clemson.cloudlab.us.50712: Flags [.], ack 6490, win 2053, length 0
+11:00:45.627809 IP clnode190.clemson.cloudlab.us.50712 > 104.46.115.237.8883: Flags [P.], seq 6490:7119, ack 4009, win 501, length 629
+11:00:45.687815 IP 104.46.115.237.8883 > clnode190.clemson.cloudlab.us.50712: Flags [.], ack 7119, win 2050, length 0
+11:00:45.687828 IP clnode190.clemson.cloudlab.us.50712 > 104.46.115.237.8883: Flags [P.], seq 7119:7748, ack 4009, win 501, length 629
+11:00:45.752798 IP 104.46.115.237.8883 > clnode190.clemson.cloudlab.us.50712: Flags [.], ack 7748, win 2048, length 0
+11:00:45.752811 IP clnode190.clemson.cloudlab.us.50712 > 104.46.115.237.8883: Flags [P.], seq 7748:8377, ack 4009, win 501, length 629
+11:00:45.812780 IP 104.46.115.237.8883 > clnode190.clemson.cloudlab.us.50712: Flags [.], ack 8377, win 2053, length 0
+11:00:45.852503 IP clnode190.clemson.cloudlab.us.50712 > 104.46.115.237.8883: Flags [P.], seq 8377:9006, ack 4009, win 501, length 629
+11:00:45.913900 IP 104.46.115.237.8883 > clnode190.clemson.cloudlab.us.50712: Flags [.], ack 9006, win 2050, length 0
+11:00:45.916147 IP clnode190.clemson.cloudlab.us.50712 > 104.46.115.237.8883: Flags [P.], seq 9006:9635, ack 4009, win 501, length 629
+11:00:45.977483 IP 104.46.115.237.8883 > clnode190.clemson.cloudlab.us.50712: Flags [.], ack 9635, win 2048, length 0
+11:00:45.987661 IP clnode190.clemson.cloudlab.us.50712 > 104.46.115.237.8883: Flags [P.], seq 9635:10264, ack 4009, win 501, length 629
+11:00:46.052555 IP 104.46.115.237.8883 > clnode190.clemson.cloudlab.us.50712: Flags [.], ack 10264, win 2053, length 0
+11:00:46.061429 IP clnode190.clemson.cloudlab.us.50712 > 104.46.115.237.8883: Flags [P.], seq 10264:10893, ack 4009, win 501, length 629
+11:00:46.122608 IP 104.46.115.237.8883 > clnode190.clemson.cloudlab.us.50712: Flags [.], ack 10893, win 2050, length 0
+11:00:46.141805 IP clnode190.clemson.cloudlab.us.50712 > 104.46.115.237.8883: Flags [P.], seq 10893:11522, ack 4009, win 501, length 629
+11:00:46.202467 IP 104.46.115.237.8883 > clnode190.clemson.cloudlab.us.50712: Flags [.], ack 11522, win 2048, length 0
+11:00:46.202489 IP clnode190.clemson.cloudlab.us.50712 > 104.46.115.237.8883: Flags [P.], seq 11522:12151, ack 4009, win 501, length 629
+11:00:46.265859 IP 104.46.115.237.8883 > clnode190.clemson.cloudlab.us.50712: Flags [.], ack 12151, win 2053, length 0
+11:00:46.265869 IP clnode190.clemson.cloudlab.us.50712 > 104.46.115.237.8883: Flags [P.], seq 12151:12780, ack 4009, win 501, length 629
+11:00:46.325872 IP 104.46.115.237.8883 > clnode190.clemson.cloudlab.us.50712: Flags [.], ack 12780, win 2050, length 0
+11:00:46.329705 IP clnode190.clemson.cloudlab.us.50712 > 104.46.115.237.8883: Flags [P.], seq 12780:13409, ack 4009, win 501, length 629
+11:00:46.390934 IP 104.46.115.237.8883 > clnode190.clemson.cloudlab.us.50712: Flags [.], ack 13409, win 2048, length 0
+11:00:46.390962 IP clnode190.clemson.cloudlab.us.50712 > 104.46.115.237.8883: Flags [P.], seq 13409:14038, ack 4009, win 501, length 629
+11:00:46.451754 IP 104.46.115.237.8883 > clnode190.clemson.cloudlab.us.50712: Flags [.], ack 14038, win 2053, length 0
+11:00:46.579989 IP clnode190.clemson.cloudlab.us.50712 > 104.46.115.237.8883: Flags [P.], seq 14038:14667, ack 4009, win 501, length 629
+11:00:46.641867 IP 104.46.115.237.8883 > clnode190.clemson.cloudlab.us.50712: Flags [.], ack 14667, win 2050, length 0
+11:00:46.659166 IP clnode190.clemson.cloudlab.us.50712 > 104.46.115.237.8883: Flags [P.], seq 14667:15296, ack 4009, win 501, length 629
+11:00:46.721921 IP 104.46.115.237.8883 > clnode190.clemson.cloudlab.us.50712: Flags [.], ack 15296, win 2048, length 0
+11:00:46.721932 IP clnode190.clemson.cloudlab.us.50712 > 104.46.115.237.8883: Flags [P.], seq 15296:15925, ack 4009, win 501, length 629
+11:00:46.781871 IP 104.46.115.237.8883 > clnode190.clemson.cloudlab.us.50712: Flags [.], ack 15925, win 2053, length 0
+11:00:46.812740 IP clnode190.clemson.cloudlab.us.50712 > 104.46.115.237.8883: Flags [P.], seq 15925:16554, ack 4009, win 501, length 629
+
