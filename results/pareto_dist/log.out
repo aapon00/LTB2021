@@ -1,0 +1,120 @@
+/zfs/dicelab/DigitalPlant/C_Synthetic_Data_Generator/cmake/generate_data /zfs/dicelab/DigitalPlant/bash_scripts/run_multiple_sensors.sh
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+libstor+  1266  0.0  0.0   8592  1408 ?        Ss   Mar28   0:18 /usr/bin/lsmd -d
+polkitd   1267  0.0  0.0 614416  4948 ?        Ssl  Mar28   3:27 /usr/lib/polkit-1/polkitd --no-debug
+dbus      1287  0.0  0.0  60336  3768 ?        Ss   Mar28   5:42 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+rpc       1291  0.0  0.0  69288  2912 ?        Ss   Mar28   0:10 /sbin/rpcbind -w
+ntp       1518  0.0  0.0  49388  3044 ?        Ss   Mar28   0:15 /usr/sbin/ntpd -u ntp:ntp -g
+rpcuser   2499  0.0  0.0  44672  1840 ?        Ss   Mar28   0:00 /usr/sbin/rpc.statd
+smmsp     2760  0.0  0.0  84288  1612 ?        Ss   Mar28   0:01 sendmail: Queue runner@01:00:00 for /var/spool/clientmqueue
+pcp       2920  0.0  0.0 177964  4480 ?        Ssl  Mar28   5:41 /usr/libexec/pcp/bin/pmcd
+pcp       3776  0.0  0.0 146244 44764 ?        S    Mar28   2:15 /usr/libexec/pcp/bin/pmlogger -P -r -c /etc/pcp/pmlogger/pmlogger-supremm.config -m pmlogger_check 20200328.22.40
+whalabi  62214  0.0  0.0 115324  3284 ?        Ss   09:32   0:00 -bash
+whalabi  62247  0.0  0.0 113200  2916 ?        S    09:32   0:00 /bin/bash /var/spool/pbs/mom_priv/jobs/9111232.pbs02.SC
+whalabi  62258  0.0  0.0 155384  4024 ?        R    09:32   0:00 ps aux
+total 4844
+drwxrwxr-x 2 whalabi cuuser    4096 Jul 20 09:32 .
+drwx------ 3 whalabi cuuser      46 Jul 20 09:33 ..
+-rw-rw-r-- 1 whalabi cuuser   12992 Jul 20 09:32 conn.list
+-rwxrwxr-x 1 whalabi cuuser    2767 Jul 20 09:32 driver.sh
+-rwxrwxr-x 1 whalabi cuuser 4894160 Jul 20 09:32 generate_data
+-rw-rw-r-- 1 whalabi cuuser    1469 Jul 20 09:32 log.out
+-rw-rw-r-- 1 whalabi cuuser      85 Jul 20 09:32 parameter1_5
+-rw-rw-r-- 1 whalabi cuuser      85 Jul 20 09:32 parameter1_50
+-rw-rw-r-- 1 whalabi cuuser      85 Jul 20 09:32 parameter1_500
+-rw-rw-r-- 1 whalabi cuuser      85 Jul 20 09:32 parameter2_7
+-rw-rw-r-- 1 whalabi cuuser      85 Jul 20 09:32 parameter2_707
+-rw-rw-r-- 1 whalabi cuuser      85 Jul 20 09:32 parameter2_71
+-rw-rw-r-- 1 whalabi cuuser      85 Jul 20 09:32 parameter3_79
+-rw-rw-r-- 1 whalabi cuuser      85 Jul 20 09:32 parameter3_794
+-rw-rw-r-- 1 whalabi cuuser      85 Jul 20 09:32 parameter3_8
+
+Using parameter1_5, running trial 0
+
+paramater_array: ./parameter1_5
+connection_strings: ./conn.list
+logs: run_parameter1_5/trial0
+generate_data: ./generate_data
+100
+All processes spawned at Mon Jul 20 09:33:03 EDT 2020. Now waiting
+All procceses finished at Mon Jul 20 10:01:33 EDT 2020
+
+Using parameter1_50, running trial 0
+
+paramater_array: ./parameter1_50
+connection_strings: ./conn.list
+logs: run_parameter1_50/trial0
+generate_data: ./generate_data
+100
+All processes spawned at Mon Jul 20 10:02:33 EDT 2020. Now waiting
+All procceses finished at Mon Jul 20 10:41:10 EDT 2020
+
+Using parameter1_500, running trial 0
+
+paramater_array: ./parameter1_500
+connection_strings: ./conn.list
+logs: run_parameter1_500/trial0
+generate_data: ./generate_data
+100
+All processes spawned at Mon Jul 20 10:42:10 EDT 2020. Now waiting
+All procceses finished at Mon Jul 20 10:54:00 EDT 2020
+
+Using parameter2_7, running trial 0
+
+paramater_array: ./parameter2_7
+connection_strings: ./conn.list
+logs: run_parameter2_7/trial0
+generate_data: ./generate_data
+100
+All processes spawned at Mon Jul 20 10:55:00 EDT 2020. Now waiting
+All procceses finished at Mon Jul 20 11:01:50 EDT 2020
+
+Using parameter2_707, running trial 0
+
+paramater_array: ./parameter2_707
+connection_strings: ./conn.list
+logs: run_parameter2_707/trial0
+generate_data: ./generate_data
+100
+All processes spawned at Mon Jul 20 11:02:50 EDT 2020. Now waiting
+All procceses finished at Mon Jul 20 11:09:16 EDT 2020
+
+Using parameter2_71, running trial 0
+
+paramater_array: ./parameter2_71
+connection_strings: ./conn.list
+logs: run_parameter2_71/trial0
+generate_data: ./generate_data
+100
+All processes spawned at Mon Jul 20 11:10:16 EDT 2020. Now waiting
+All procceses finished at Mon Jul 20 11:17:16 EDT 2020
+
+Using parameter3_79, running trial 0
+
+paramater_array: ./parameter3_79
+connection_strings: ./conn.list
+logs: run_parameter3_79/trial0
+generate_data: ./generate_data
+100
+All processes spawned at Mon Jul 20 11:18:16 EDT 2020. Now waiting
+All procceses finished at Mon Jul 20 11:24:08 EDT 2020
+
+Using parameter3_794, running trial 0
+
+paramater_array: ./parameter3_794
+connection_strings: ./conn.list
+logs: run_parameter3_794/trial0
+generate_data: ./generate_data
+100
+All processes spawned at Mon Jul 20 11:25:09 EDT 2020. Now waiting
+All procceses finished at Mon Jul 20 11:30:52 EDT 2020
+
+Using parameter3_8, running trial 0
+
+paramater_array: ./parameter3_8
+connection_strings: ./conn.list
+logs: run_parameter3_8/trial0
+generate_data: ./generate_data
+100
+All processes spawned at Mon Jul 20 11:31:53 EDT 2020. Now waiting
+All procceses finished at Mon Jul 20 11:37:44 EDT 2020
