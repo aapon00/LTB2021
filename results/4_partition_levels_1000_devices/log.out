@@ -1,0 +1,380 @@
+/zfs/dicelab/DigitalPlant/C_Synthetic_Data_Generator/cmake/generate_data /zfs/dicelab/DigitalPlant/bash_scripts/run_multiple_sensors.sh
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+whalabi   1097  0.0  0.0 115324  3192 ?        Ss   16:48   0:00 -bash
+whalabi   1137  0.0  0.0 113200  3112 ?        S    16:48   0:00 /bin/bash /var/spool/pbs/mom_priv/jobs/9137061.pbs02.SC
+whalabi   1151  0.0  0.0 155384  3996 ?        R    16:48   0:00 ps aux
+libstor+  5058  0.0  0.0   8592  1764 ?        Ss   Mar20   0:21 /usr/bin/lsmd -d
+rpc       5064  0.0  0.0  69288  3304 ?        Ss   Mar20   0:12 /sbin/rpcbind -w
+dbus      5118  0.0  0.0  61864  5456 ?        Ss   Mar20   5:58 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+ntp       5144  0.0  0.0  49388  4664 ?        Ss   Mar20   0:17 /usr/sbin/ntpd -u ntp:ntp -g
+polkitd   5265  0.0  0.0 614532  6272 ?        Ssl  Mar20   3:53 /usr/lib/polkit-1/polkitd --no-debug
+rpcuser   6453  0.0  0.0  44672  3120 ?        Ss   Mar20   0:00 /usr/sbin/rpc.statd
+smmsp     6628  0.0  0.0  84292  1732 ?        Ss   Mar20   0:01 sendmail: Queue runner@01:00:00 for /var/spool/clientmqueue
+pcp       6963  0.0  0.0 178060  5760 ?        Ssl  Mar20   6:29 /usr/libexec/pcp/bin/pmcd
+pcp      12583  0.0  0.0 152720 40368 ?        S    Mar20   1:53 /usr/libexec/pcp/bin/pmlogger -P -r -c /etc/pcp/pmlogger/pmlogger-supremm.config -m pmlogger_check 20200320.13.19
+total 5304
+drwxrwxr-x 2 whalabi dicelab    4096 Jul 23 16:48 .
+drwx------ 3 whalabi dicelab      57 Jul 23 16:48 ..
+-rw-rw-r-- 1 whalabi dicelab  127893 Jul 23 16:48 connection_strings_16.list
+-rw-rw-r-- 1 whalabi dicelab  127893 Jul 23 16:48 connection_strings_32.list
+-rw-rw-r-- 1 whalabi dicelab  130893 Jul 23 16:48 connection_strings_4.list
+-rw-rw-r-- 1 whalabi dicelab  126893 Jul 23 16:48 connection_strings_8.list
+-rwxrwxr-x 1 whalabi dicelab    2767 Jul 23 16:48 driver.sh
+-rwxrwxr-x 1 whalabi dicelab 4894160 Jul 23 16:48 generate_data
+-rw-rw-r-- 1 whalabi dicelab    1469 Jul 23 16:48 log.out
+-rw-rw-r-- 1 whalabi dicelab      75 Jul 23 16:48 parameter0
+
+Using parameter0
+
+Using connection_strings_4.list and parameter0, running trial 0
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_4.list
+logs: parameter0_run/connection_strings_4.list/trial0/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 16:48:14 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 16:53:19 EDT 2020
+Using connection_strings_4.list and parameter0, running trial 1
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_4.list
+logs: parameter0_run/connection_strings_4.list/trial1/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 16:54:20 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 16:59:24 EDT 2020
+Using connection_strings_4.list and parameter0, running trial 2
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_4.list
+logs: parameter0_run/connection_strings_4.list/trial2/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 17:00:24 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 17:05:25 EDT 2020
+Using connection_strings_4.list and parameter0, running trial 3
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_4.list
+logs: parameter0_run/connection_strings_4.list/trial3/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 17:06:26 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 17:11:30 EDT 2020
+Using connection_strings_4.list and parameter0, running trial 4
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_4.list
+logs: parameter0_run/connection_strings_4.list/trial4/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 17:12:31 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 17:17:31 EDT 2020
+Using connection_strings_4.list and parameter0, running trial 5
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_4.list
+logs: parameter0_run/connection_strings_4.list/trial5/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 17:18:32 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 17:23:32 EDT 2020
+Using connection_strings_4.list and parameter0, running trial 6
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_4.list
+logs: parameter0_run/connection_strings_4.list/trial6/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 17:24:33 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 17:29:38 EDT 2020
+Using connection_strings_4.list and parameter0, running trial 7
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_4.list
+logs: parameter0_run/connection_strings_4.list/trial7/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 17:30:38 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 17:35:39 EDT 2020
+Using connection_strings_4.list and parameter0, running trial 8
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_4.list
+logs: parameter0_run/connection_strings_4.list/trial8/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 17:36:40 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 17:41:40 EDT 2020
+Using connection_strings_4.list and parameter0, running trial 9
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_4.list
+logs: parameter0_run/connection_strings_4.list/trial9/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 17:42:41 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 17:47:41 EDT 2020
+Using connection_strings_4.list and parameter0, running trial 10
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_4.list
+logs: parameter0_run/connection_strings_4.list/trial10/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 17:48:42 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 17:53:42 EDT 2020
+Using connection_strings_8.list and parameter0, running trial 0
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_8.list
+logs: parameter0_run/connection_strings_8.list/trial0/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 17:54:43 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 17:59:48 EDT 2020
+Using connection_strings_8.list and parameter0, running trial 1
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_8.list
+logs: parameter0_run/connection_strings_8.list/trial1/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 18:00:48 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 18:05:49 EDT 2020
+Using connection_strings_8.list and parameter0, running trial 2
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_8.list
+logs: parameter0_run/connection_strings_8.list/trial2/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 18:06:50 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 18:11:50 EDT 2020
+Using connection_strings_8.list and parameter0, running trial 3
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_8.list
+logs: parameter0_run/connection_strings_8.list/trial3/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 18:12:51 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 18:17:51 EDT 2020
+Using connection_strings_8.list and parameter0, running trial 4
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_8.list
+logs: parameter0_run/connection_strings_8.list/trial4/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 18:18:52 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 18:23:53 EDT 2020
+Using connection_strings_8.list and parameter0, running trial 5
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_8.list
+logs: parameter0_run/connection_strings_8.list/trial5/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 18:24:53 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 18:29:54 EDT 2020
+Using connection_strings_8.list and parameter0, running trial 6
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_8.list
+logs: parameter0_run/connection_strings_8.list/trial6/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 18:30:54 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 18:35:55 EDT 2020
+Using connection_strings_8.list and parameter0, running trial 7
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_8.list
+logs: parameter0_run/connection_strings_8.list/trial7/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 18:36:55 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 18:41:56 EDT 2020
+Using connection_strings_8.list and parameter0, running trial 8
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_8.list
+logs: parameter0_run/connection_strings_8.list/trial8/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 18:42:56 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 18:47:57 EDT 2020
+Using connection_strings_8.list and parameter0, running trial 9
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_8.list
+logs: parameter0_run/connection_strings_8.list/trial9/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 18:48:57 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 18:53:58 EDT 2020
+Using connection_strings_8.list and parameter0, running trial 10
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_8.list
+logs: parameter0_run/connection_strings_8.list/trial10/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 18:54:58 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 18:59:59 EDT 2020
+Using connection_strings_16.list and parameter0, running trial 0
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_16.list
+logs: parameter0_run/connection_strings_16.list/trial0/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 19:01:00 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 19:06:00 EDT 2020
+Using connection_strings_16.list and parameter0, running trial 1
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_16.list
+logs: parameter0_run/connection_strings_16.list/trial1/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 19:07:01 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 19:12:01 EDT 2020
+Using connection_strings_16.list and parameter0, running trial 2
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_16.list
+logs: parameter0_run/connection_strings_16.list/trial2/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 19:13:02 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 19:18:02 EDT 2020
+Using connection_strings_16.list and parameter0, running trial 3
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_16.list
+logs: parameter0_run/connection_strings_16.list/trial3/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 19:19:03 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 19:24:07 EDT 2020
+Using connection_strings_16.list and parameter0, running trial 4
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_16.list
+logs: parameter0_run/connection_strings_16.list/trial4/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 19:25:08 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 19:30:10 EDT 2020
+Using connection_strings_16.list and parameter0, running trial 5
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_16.list
+logs: parameter0_run/connection_strings_16.list/trial5/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 19:31:15 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 19:36:20 EDT 2020
+Using connection_strings_16.list and parameter0, running trial 6
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_16.list
+logs: parameter0_run/connection_strings_16.list/trial6/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 19:37:21 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 19:42:22 EDT 2020
+Using connection_strings_16.list and parameter0, running trial 7
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_16.list
+logs: parameter0_run/connection_strings_16.list/trial7/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 19:43:22 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 19:48:23 EDT 2020
+Using connection_strings_16.list and parameter0, running trial 8
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_16.list
+logs: parameter0_run/connection_strings_16.list/trial8/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 19:49:24 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 19:54:24 EDT 2020
+Using connection_strings_16.list and parameter0, running trial 9
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_16.list
+logs: parameter0_run/connection_strings_16.list/trial9/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 19:55:25 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 20:00:25 EDT 2020
+Using connection_strings_16.list and parameter0, running trial 10
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_16.list
+logs: parameter0_run/connection_strings_16.list/trial10/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 20:01:26 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 20:06:26 EDT 2020
+Using connection_strings_32.list and parameter0, running trial 0
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_32.list
+logs: parameter0_run/connection_strings_32.list/trial0/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 20:07:27 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 20:12:31 EDT 2020
+Using connection_strings_32.list and parameter0, running trial 1
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_32.list
+logs: parameter0_run/connection_strings_32.list/trial1/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 20:13:32 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 20:18:32 EDT 2020
+Using connection_strings_32.list and parameter0, running trial 2
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_32.list
+logs: parameter0_run/connection_strings_32.list/trial2/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 20:19:33 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 20:24:33 EDT 2020
+Using connection_strings_32.list and parameter0, running trial 3
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_32.list
+logs: parameter0_run/connection_strings_32.list/trial3/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 20:25:34 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 20:30:34 EDT 2020
+Using connection_strings_32.list and parameter0, running trial 4
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_32.list
+logs: parameter0_run/connection_strings_32.list/trial4/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 20:31:35 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 20:36:35 EDT 2020
+Using connection_strings_32.list and parameter0, running trial 5
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_32.list
+logs: parameter0_run/connection_strings_32.list/trial5/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 20:37:36 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 20:42:36 EDT 2020
+Using connection_strings_32.list and parameter0, running trial 6
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_32.list
+logs: parameter0_run/connection_strings_32.list/trial6/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 20:43:37 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 20:48:37 EDT 2020
+Using connection_strings_32.list and parameter0, running trial 7
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_32.list
+logs: parameter0_run/connection_strings_32.list/trial7/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 20:49:38 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 20:54:39 EDT 2020
+Using connection_strings_32.list and parameter0, running trial 8
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_32.list
+logs: parameter0_run/connection_strings_32.list/trial8/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 20:55:39 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 21:00:40 EDT 2020
+Using connection_strings_32.list and parameter0, running trial 9
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_32.list
+logs: parameter0_run/connection_strings_32.list/trial9/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 21:01:40 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 21:06:41 EDT 2020
+Using connection_strings_32.list and parameter0, running trial 10
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_32.list
+logs: parameter0_run/connection_strings_32.list/trial10/
+generate_data: ./generate_data
+1000
+All processes spawned at Thu Jul 23 21:07:41 EDT 2020. Now waiting
+All procceses finished at Thu Jul 23 21:12:42 EDT 2020
