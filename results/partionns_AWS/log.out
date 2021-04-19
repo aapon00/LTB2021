@@ -1,0 +1,104 @@
+/home/guest/DigitalPlant/C_Synthetic_Data_Generator/cmake/generate_data /home/guest/DigitalPlant/bash_scripts/run_multiple_sensors.sh
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+systemd+   699  0.0  0.2 100320  2116 ?        Ssl  Jun14   0:00 /lib/systemd/systemd-timesyncd
+daemon    1144  0.0  0.1  26040  1936 ?        Ss   Jun14   0:00 /usr/sbin/atd -f
+redis     1159  0.1  0.3  52096  3696 ?        Ssl  Jun14  16:10 /usr/local/bin/redis-server 127.0.0.1:6379
+syslog    1170  0.0  0.2 260624  3008 ?        Ssl  Jun14   0:00 /usr/sbin/rsyslogd -n
+message+  1187  0.0  0.3  43024  3396 ?        Ss   Jun14   0:00 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+guest    26664  0.0  0.4  45164  4616 ?        Ss   16:20   0:00 /lib/systemd/systemd --user
+guest    26666  0.0  0.1  61312  1972 ?        S    16:20   0:00 (sd-pam)
+guest    26732  0.0  0.3  92800  3392 ?        S    16:20   0:00 sshd: guest@pts/0
+guest    26733  0.0  0.5  21480  5440 pts/0    Ss   16:20   0:00 -bash
+guest    27029  0.0  0.3  11248  3092 pts/0    S+   16:24   0:00 bash partitions.pbs
+guest    27040  0.0  0.3  36080  3260 pts/0    R+   16:24   0:00 ps aux
+total 2452
+drwxrwxr-x 2 guest guest    4096 Jun 24 16:24 .
+drwxrwxr-x 3 guest guest    4096 Jun 24 16:24 ..
+-rw-r--r-- 1 guest guest    1291 Jun 24 16:24 connection_strings_4.list
+-rwxr-xr-x 1 guest guest    2760 Jun 24 16:24 driver.sh
+-rwxrwxr-x 1 guest guest 2478008 Jun 24 16:24 generate_data
+-rw-rw-r-- 1 guest guest    1214 Jun 24 16:24 log.out
+-rw-rw-r-- 1 guest guest      73 Jun 24 16:24 parameter0
+-rw-rw-r-- 1 guest guest      72 Jun 24 16:24 parameter1
+-rw-rw-r-- 1 guest guest      71 Jun 24 16:24 parameter2
+
+Using parameter0
+
+Using connection_strings_4.list and parameter0, running trial 0
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_4.list
+logs: parameter0_run/connection_strings_4.list/trial0/
+generate_data: ./generate_data
+10
+All processes spawned at Wed Jun 24 16:24:44 UTC 2020. Now waiting
+All procceses finished at Wed Jun 24 16:29:44 UTC 2020
+Using connection_strings_4.list and parameter0, running trial 1
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_4.list
+logs: parameter0_run/connection_strings_4.list/trial1/
+generate_data: ./generate_data
+10
+All processes spawned at Wed Jun 24 16:29:44 UTC 2020. Now waiting
+All procceses finished at Wed Jun 24 16:34:44 UTC 2020
+Using connection_strings_4.list and parameter0, running trial 2
+paramater_array: ./parameter0
+connection_strings: ./connection_strings_4.list
+logs: parameter0_run/connection_strings_4.list/trial2/
+generate_data: ./generate_data
+10
+All processes spawned at Wed Jun 24 16:34:44 UTC 2020. Now waiting
+All procceses finished at Wed Jun 24 16:39:45 UTC 2020
+
+Using parameter1
+
+Using connection_strings_4.list and parameter1, running trial 0
+paramater_array: ./parameter1
+connection_strings: ./connection_strings_4.list
+logs: parameter1_run/connection_strings_4.list/trial0/
+generate_data: ./generate_data
+10
+All processes spawned at Wed Jun 24 16:40:15 UTC 2020. Now waiting
+All procceses finished at Wed Jun 24 16:45:16 UTC 2020
+Using connection_strings_4.list and parameter1, running trial 1
+paramater_array: ./parameter1
+connection_strings: ./connection_strings_4.list
+logs: parameter1_run/connection_strings_4.list/trial1/
+generate_data: ./generate_data
+10
+All processes spawned at Wed Jun 24 16:45:16 UTC 2020. Now waiting
+All procceses finished at Wed Jun 24 16:50:17 UTC 2020
+Using connection_strings_4.list and parameter1, running trial 2
+paramater_array: ./parameter1
+connection_strings: ./connection_strings_4.list
+logs: parameter1_run/connection_strings_4.list/trial2/
+generate_data: ./generate_data
+10
+All processes spawned at Wed Jun 24 16:50:17 UTC 2020. Now waiting
+All procceses finished at Wed Jun 24 16:55:18 UTC 2020
+
+Using parameter2
+
+Using connection_strings_4.list and parameter2, running trial 0
+paramater_array: ./parameter2
+connection_strings: ./connection_strings_4.list
+logs: parameter2_run/connection_strings_4.list/trial0/
+generate_data: ./generate_data
+10
+All processes spawned at Wed Jun 24 16:55:48 UTC 2020. Now waiting
+All procceses finished at Wed Jun 24 17:00:56 UTC 2020
+Using connection_strings_4.list and parameter2, running trial 1
+paramater_array: ./parameter2
+connection_strings: ./connection_strings_4.list
+logs: parameter2_run/connection_strings_4.list/trial1/
+generate_data: ./generate_data
+10
+All processes spawned at Wed Jun 24 17:00:56 UTC 2020. Now waiting
+All procceses finished at Wed Jun 24 17:06:05 UTC 2020
+Using connection_strings_4.list and parameter2, running trial 2
+paramater_array: ./parameter2
+connection_strings: ./connection_strings_4.list
+logs: parameter2_run/connection_strings_4.list/trial2/
+generate_data: ./generate_data
+10
+All processes spawned at Wed Jun 24 17:06:05 UTC 2020. Now waiting
+All procceses finished at Wed Jun 24 17:11:14 UTC 2020
