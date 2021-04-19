@@ -1,0 +1,1 @@
+./generate_data "HostName=dicelab-iothub.azure-devices.net;DeviceId=python_device9327;SharedAccessKey=BbqmGGRGka9hM9phug1Ad1l3mW49ut1Wu5jUQfjvsIQ=" --filename /local_scratch/pbs.9087364.pbs02/local_repo/log673 --distribution constant --intermessage 200 --time 5400 --type Size2048
