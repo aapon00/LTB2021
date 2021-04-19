@@ -1,0 +1,14 @@
+    10603     10606    306991 connection_strings_16.list/trial0/log2_latencies.csv
+    10613     10616    307291 connection_strings_16.list/trial0/log3_latencies.csv
+    12644     12647    368221 connection_strings_4.list/trial0/log2_latencies.csv
+    12650     12653    368401 connection_strings_4.list/trial0/log7_latencies.csv
+    11614     11617    337321 connection_strings_4.list/trial3/log1_latencies.csv
+    11650     11653    338401 connection_strings_4.list/trial3/log2_latencies.csv
+    17194     17197    504721 connection_strings_8.list/trial0/log0_latencies.csv
+    15873     15876    465091 connection_strings_8.list/trial0/log4_latencies.csv
+    12722     12725    370561 connection_strings_8.list/trial1/log0_latencies.csv
+    15617     15620    457411 connection_strings_8.list/trial2/log0_latencies.csv
+    16278     16281    477241 connection_strings_8.list/trial2/log4_latencies.csv
+    14866     14869    434881 connection_strings_8.list/trial3/log0_latencies.csv
+    14863     14866    434791 connection_strings_8.list/trial3/log4_latencies.csv
+    15617     15620    457411 connection_strings_8.list/trial4/log4_latencies.csv
