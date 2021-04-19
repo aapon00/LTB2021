@@ -1,0 +1,32 @@
+/zfs/dicelab/DigitalPlant/bash_scripts/parameters.list /zfs/dicelab/DigitalPlant/C_Synthetic_Data_Generator/cmake/generate_data /zfs/dicelab/DigitalPlant/bash_scripts/run_multiple_sensors.sh
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+polkitd   1273  0.0  0.0 614416 17144 ?        Ssl  Mar25   2:05 /usr/lib/polkit-1/polkitd --no-debug
+rpc       1317  0.0  0.0  69288  3680 ?        Ss   Mar25   0:06 /sbin/rpcbind -w
+libstor+  1341  0.0  0.0   8592  1700 ?        Ss   Mar25   0:11 /usr/bin/lsmd -d
+dbus      1348  0.0  0.0  60336  4584 ?        Ss   Mar25   3:08 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+ntp       1366  0.0  0.0  49388  5320 ?        Ss   Mar25   0:11 /usr/sbin/ntpd -u ntp:ntp -g
+rpcuser   2501  0.0  0.0  44672  3496 ?        Ss   Mar25   0:00 /usr/sbin/rpc.statd
+smmsp     2762  0.0  0.0  84292  3520 ?        Ss   Mar25   0:00 sendmail: Queue runner@01:00:00 for /var/spool/clientmqueue
+pcp       3025  0.0  0.0 177824  6036 ?        Ssl  Mar25   3:44 /usr/libexec/pcp/bin/pmcd
+pcp       3793  0.0  0.0 122864 33592 ?        S    Mar25   1:21 /usr/libexec/pcp/bin/pmlogger -P -r -c /etc/pcp/pmlogger/pmlogger-supremm.config -m pmlogger_check 20200325.15.07
+whalabi  20475  0.0  0.0 115324  3172 ?        Ss   16:57   0:00 -bash
+whalabi  20508  0.0  0.0 113200  2956 ?        S    16:57   0:00 /bin/bash /var/spool/pbs/mom_priv/jobs/8662767.pbs02.SC
+whalabi  20521  0.0  0.0 155384  3944 ?        R    16:57   0:00 ps aux
+total 5828
+drwxrwxr-x 3 whalabi cuuser     106 May 27 16:57 .
+drwx------ 3 whalabi cuuser      38 May 27 16:57 ..
+-rw-rw-r-- 1 whalabi cuuser 1318894 May 27 16:57 conn.list
+-rwxrwxr-x 1 whalabi cuuser    2765 May 27 16:57 driver.sh
+-rwxrwxr-x 1 whalabi cuuser 4634416 May 27 16:57 generate_data
+-rw-rw-r-- 1 whalabi cuuser    1524 May 27 16:57 log.out
+drwxrwxr-x 2 whalabi cuuser       6 May 27 16:57 logs
+-rw-rw-r-- 1 whalabi cuuser      74 May 27 16:57 parameters
+paramater_array: ./parameters
+connection_strings: ./conn.list
+logs: ./logs
+generate_data: ./generate_data
+10000
+All processes spawned at Wed May 27 16:57:56 EDT 2020. Now waiting
+Error: Time:Wed May 27 17:00:30 2020 File:/local_scratch/pbs.8249822.pbs02/whalabi/spack-stage/spack-stage-azureiot-2020-01-22-dmqom7c4fggxff6wiwwo5iqp2jnsj6lc/spack-src/umqtt/src/mqtt_client.c Func:onOpenComplete Line:454 Error: failure opening connection to endpoint
+Error: Time:Wed May 27 17:00:29 2020 File:/local_scratch/pbs.8249822.pbs02/whalabi/spack-stage/spack-stage-azureiot-2020-01-22-dmqom7c4fggxff6wiwwo5iqp2jnsj6lc/spack-src/umqtt/src/mqtt_client.c Func:onOpenComplete Line:454 Error: failure opening connection to endpoint
+All procceses finished at Wed May 27 17:00:33 EDT 2020

@@ -1,0 +1,9 @@
+./driver.sh: line 75: 20702 Segmentation fault      (core dumped) $GENERATE_DATA ${connection_strings[count]} ${parameters_array[$param_index]} --filename "$LOG_FOLDER"/log$i
+./driver.sh: line 75: 20771 Segmentation fault      (core dumped) $GENERATE_DATA ${connection_strings[count]} ${parameters_array[$param_index]} --filename "$LOG_FOLDER"/log$i
+./driver.sh: line 75: 21700 Segmentation fault      (core dumped) $GENERATE_DATA ${connection_strings[count]} ${parameters_array[$param_index]} --filename "$LOG_FOLDER"/log$i
+./driver.sh: line 75: 21046 Segmentation fault      (core dumped) $GENERATE_DATA ${connection_strings[count]} ${parameters_array[$param_index]} --filename "$LOG_FOLDER"/log$i
+./driver.sh: line 75: 21359 Segmentation fault      (core dumped) $GENERATE_DATA ${connection_strings[count]} ${parameters_array[$param_index]} --filename "$LOG_FOLDER"/log$i
+./driver.sh: line 75: 21323 Segmentation fault      (core dumped) $GENERATE_DATA ${connection_strings[count]} ${parameters_array[$param_index]} --filename "$LOG_FOLDER"/log$i
+./driver.sh: line 75: 21228 Segmentation fault      (core dumped) $GENERATE_DATA ${connection_strings[count]} ${parameters_array[$param_index]} --filename "$LOG_FOLDER"/log$i
+./driver.sh: line 75: 21266 Segmentation fault      (core dumped) $GENERATE_DATA ${connection_strings[count]} ${parameters_array[$param_index]} --filename "$LOG_FOLDER"/log$i
+./driver.sh: line 75: 21593 Segmentation fault      (core dumped) $GENERATE_DATA ${connection_strings[count]} ${parameters_array[$param_index]} --filename "$LOG_FOLDER"/log$i
